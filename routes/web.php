@@ -16,4 +16,4 @@ Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout']);
 
 Route::get('/all-categories', function(){
     return view('admin.all-categories');
-});
+})->middleware('auth');
