@@ -154,7 +154,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/logout') }}">
+        <a class="nav-link" title="Logout" href="{{ url('/logout') }}">
           <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>
@@ -183,16 +183,7 @@
       </div>
 
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+      
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -200,12 +191,35 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="{{ url('/home')}}" class="nav-link active">
+            <a href="{{ url('/home')}}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Products
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/all-categories')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Products</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/create_product')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Edit Products</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -223,7 +237,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="{{ url('/edit-categories')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Edit Categories</p>
                 </a>
