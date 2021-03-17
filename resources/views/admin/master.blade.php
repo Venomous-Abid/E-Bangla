@@ -216,7 +216,7 @@
               <li class="nav-item">
                 <a href="{{ url('/create_product')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Edit Products</p>
+                  <p>Add Products</p>
                 </a>
               </li>
             </ul>
@@ -231,13 +231,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/all-categories')}}" class="nav-link">
+                <a href="{{ url('/categories')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All Categories</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('/edit-categories')}}" class="nav-link">
+                <a href="{{ url('/add_categories')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Edit Categories</p>
                 </a>

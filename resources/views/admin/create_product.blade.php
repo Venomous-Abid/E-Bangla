@@ -38,34 +38,34 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputPassword1">Title</label>
-                    <input type="text" class="form-control" name="title" id="title" placeholder="Title">
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Title" required>
                   </div>
                   <div class="form-group">
                     <label for="category">Category</label>
-                    <input type="text" class="form-control" name="category" id="category" placeholder="Title">
+                    <input type="text" class="form-control" name="category" id="category" placeholder="Category" required>
                   </div>
                   <div class="form-group">
                     <label for="sub_category">Sub_category</label>
-                    <input type="text" class="form-control" name="sub_category" id="sub_category" placeholder="Title">
+                    <input type="text" class="form-control" name="sub_category" id="sub_category" placeholder="Title" required>
                   </div>
                   <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" class="form-control" name="description" id="description" placeholder="Title">
+                    <input type="text" class="form-control" name="description" id="description" placeholder="Title" required>
                   </div>
                   <div class="form-group">
                     <label for="picture">Picture</label>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" name="picture" id="picture">
+                      <input type="file" class="custom-file-input" name="picture" id="picture" required>
                       <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="text" class="form-control" name="price" id="price" placeholder="Title">
+                    <input type="text" class="form-control" name="price" id="price" placeholder="Title" required>
                   </div>
                   <div class="form-group">
                     <label for="quantity">Quantity</label>
-                    <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Title">
+                    <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Title" required>
                   </div>
                 <!-- /.card-body -->
 
