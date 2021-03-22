@@ -3,8 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\SubCategory;
 
 class SubCategoryController extends Controller
 {
-    //
+    public function manageSubCategory(){
+        $categoryArr = SubCategory::orderBy('id','DESC')->get();
+        return view('sub_categories', compact('categoryArr'));
+    }
+
+    public function destroy(SubCategory $category, $id)
+    {
+        category::destroy(array('id', $id));
+        return redirect('sub_categories');
+    }
+
+    public function store(Request $request)
+    {
+        $res=new SubCategory;
+        $res->cat_ID=$request->input('cat_ID');
+        $res->sub_category_name=$request->input('sub_category_name');
+        $res->save();
+
+        $request->session()->flash('msg','Sub Category Added');
+        return redirect ('add_Sub_Categories');
+    }
+
+    public function showCategory(){
+        $categories = Category::orderBy('category_name','ASC')->get();
+        return view('admin.add_sub_category', compact('categories'));
+    }
 }

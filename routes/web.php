@@ -34,15 +34,18 @@ Route::get('/edit-categories', function(){
 
 Route::get('/categories',[App\Http\Controllers\CategoryController::class, 'manageCategory'])->middleware('auth');
 
+Route::get('/category_delete/{id}',[App\Http\Controllers\CategoryController::class, 'destroy'])->middleware('auth');
+
+Route::post('/category_submit',[App\Http\Controllers\CategoryController::class, 'store'])->middleware('auth');
+
 Route::get('/add_categories', function(){
     return view('admin.add_categories');
 })->middleware('auth');
 
 //sub_catergories
-Route::get('/sub_categories', function(){
-    return view('admin.categories');
-})->middleware('auth');
 
-Route::get('/add_Sub_Categories', function(){
-    return view('admin.add_categories');
-})->middleware('auth');
+Route::get('/sub_categories',[App\Http\Controllers\SubCategoryController::class, 'showCategory'])->middleware('auth');
+
+Route::get('/add_Sub_Categories',[App\Http\Controllers\SubCategoryController::class, 'showCategory'])->middleware('auth');
+
+Route::post('/subCategory_submit',[App\Http\Controllers\SubCategoryController::class, 'store'])->middleware('auth');

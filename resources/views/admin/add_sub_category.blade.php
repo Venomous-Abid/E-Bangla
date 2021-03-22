@@ -13,7 +13,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Add Categories</li>
+              <li class="breadcrumb-item active">Add Sub-Categories</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,22 +28,32 @@
         <div class="col-12">
         <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Category Information</h3>
+                <h3 class="card-title">Sub_Category Information</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="post" action="category_submit">
+              <form method="post" action="subCategory_submit">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Name</label>
-                    <input type="text" class="form-control" name="category_name" id="category_name" placeholder="Category" required>
+                    <label for="exampleInputPassword1">Parent-Category</label>
+                    <select class="form-control" id="cat_ID" name="cat_ID">
+                    <option value="">Select</option>
+                    @foreach($categories as $row)
+                    <option value="{{ $row->id}}">{{ ucwords($row->category_name)}}</option>
+                    @endforeach
+                    </select>
+                  </div>
+                  <div class="card-body">
+                  <div class="form-group">
+                    <label for="sub_category_name">Sub-Category</label>
+                    <input type="text" class="form-control" name="sub_category_name" id="sub_category_name" placeholder="Name" required>
                   </div>
                   
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" name="submit" class="btn btn-primary">Add New Category</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Add New Sub Category</button>
                 </div>
               </form>
             </div>
