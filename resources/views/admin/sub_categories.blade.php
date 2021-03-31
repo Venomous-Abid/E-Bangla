@@ -37,19 +37,21 @@
                   <tr>
                     <th>ID</th>
                     <th>Category</th>
+                    <th>Sub Category</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($categoryArr as $categories)
+                  @foreach($categoryArr as $subcategories)
                   <tr>
-                    <td>{{$categories->id}}</td>
-                    <td>{{$categories->category_name}}</td>
+                    <td>{{$subcategories->id}}</td>
+                    <td>{{$subcategories->category->category_name}}</td>
+                    <td>{{$subcategories->sub_category_name}}</td>
 
                     <td> <div class="btn-group">
                  <a href="#" class="btn btn-warning" title="Edit"><i class="fas fa-edit"></i>
                              </a> 
-                 <a href="category_delete/{{$categories->id}}" class="btn btn-danger" data-toggle="tooltip" title="Delete"> <i class="fa fa-trash" aria-hidden="true"></i>   </a>             
+                 <a href="sub_category_delete/{{$subcategories->id}}" class="btn btn-danger" data-toggle="tooltip" title="Delete"> <i class="fa fa-trash" aria-hidden="true"></i>   </a>             
                            </div>
                  </td>
                    </tr>
@@ -59,6 +61,7 @@
                   <tr>
                     <th>ID</th>
                     <th>Category</th>
+                    <th>Sub Category</th>
                     <th>Actions</th>
                   </tr>
                   </tfoot>

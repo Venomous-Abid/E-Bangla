@@ -44,8 +44,12 @@ Route::get('/add_categories', function(){
 
 //sub_catergories
 
-Route::get('/sub_categories',[App\Http\Controllers\SubCategoryController::class, 'showCategory'])->middleware('auth');
+Route::get('/sub_categories',[App\Http\Controllers\SubCategoryController::class, 'allSubCategory'])->middleware('auth');
 
 Route::get('/add_Sub_Categories',[App\Http\Controllers\SubCategoryController::class, 'showCategory'])->middleware('auth');
+
+
+Route::get('/sub_category_delete/{id}',[App\Http\Controllers\SubCategoryController::class, 'destroy'])->middleware('auth');
+
 
 Route::post('/subCategory_submit',[App\Http\Controllers\SubCategoryController::class, 'store'])->middleware('auth');

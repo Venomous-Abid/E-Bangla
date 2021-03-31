@@ -8,16 +8,18 @@ use App\Models\SubCategory;
 
 class SubCategoryController extends Controller
 {
-    public function manageSubCategory(){
-        $categoryArr = SubCategory::orderBy('id','DESC')->get();
-        return view('sub_categories', compact('categoryArr'));
+    public function allSubCategory(){
+        $categoryArr = SubCategory::with('Category')->get();
+        
+        return view('admin.sub_categories', compact('categoryArr'));
     }
 
-    public function destroy(SubCategory $category, $id)
+    public function destroy(SubCategory $subcategory, $id)
     {
-        category::destroy(array('id', $id));
+        subcategory::destroy(array('id', $id));
         return redirect('sub_categories');
     }
+
 
     public function store(Request $request)
     {
@@ -34,4 +36,6 @@ class SubCategoryController extends Controller
         $categories = Category::orderBy('category_name','ASC')->get();
         return view('admin.add_sub_category', compact('categories'));
     }
+
+    
 }
